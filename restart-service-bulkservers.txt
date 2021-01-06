@@ -1,0 +1,5 @@
+$server=get-content "<device name list>"
+$result = @()ForEach ($objitem in $server)
+{$result += Get-Service -Name <servicename> -ComputerName $objitem | Restart-Service ;Get-Service -ComputerName $objitem -Name "<servicenmae>" | Select-Object MachineName,Status,Name,DisplayName
+}
+$result
