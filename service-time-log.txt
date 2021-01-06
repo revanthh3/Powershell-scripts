@@ -1,0 +1,1 @@
+(Get-EventLog -LogName "System" -Source "Service Control Manager" -EntryType "Information" -Message "<Servicename*stopped" -Newest 10) | select TimeGenerated , Message
